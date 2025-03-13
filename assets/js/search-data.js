@@ -67,6 +67,9 @@ ninja.data = [{
           section: "News",},{id: "news-invited-to-serve-acm-sigcomm-ebpf-workshop-2025-as-publication-chair-submit-your-papers",
           title: 'Invited to serve ACM SIGCOMM eBPF Workshop 2025 as publication chair! Submit your...',
           description: "",
+          section: "News",},{id: "news-i-had-the-pleasure-to-give-a-talk-about-open-ran-at-the-empower6g-phd-school",
+          title: 'I had the pleasure to give a talk about Open RAN at the...',
+          description: "",
           section: "News",},{
         id: 'social-email',
         title: 'email',
