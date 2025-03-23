@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/students/";
           },
-        },{id: "post-planning-radio-networks-can-you-do-better-than-my-students",
+        },{id: "post-experimenting-with-gsm-full-rate-and-half-rate-voice-codec",
+      
+        title: "Experimenting with GSM Full Rate and Half Rate Voice Codec",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/gsm-voice-codec/";
+        
+      },
+    },{id: "post-planning-radio-networks-can-you-do-better-than-my-students",
       
         title: "Planning radio networks, can you do better than my students?",
       
@@ -69,6 +80,9 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "news-i-had-the-pleasure-to-give-a-talk-about-open-ran-at-the-empower6g-phd-school",
           title: 'I had the pleasure to give a talk about Open RAN at the...',
+          description: "",
+          section: "News",},{id: "news-our-magazine-paper-titled-advancing-o-ran-to-facilitate-intelligence-in-v2x-has-been-accepted-for-pubblication-at-ieee-network-check-it-out-here",
+          title: 'Our magazine paper titled Advancing O-RAN to Facilitate Intelligence in V2X has been...',
           description: "",
           section: "News",},{
         id: 'social-email',
