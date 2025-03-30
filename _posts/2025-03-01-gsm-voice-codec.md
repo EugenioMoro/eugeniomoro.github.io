@@ -19,14 +19,14 @@ I started by recording my voice and then went online to look for GSM voice codec
 
 [VLC](https://www.videolan.org/vlc/) can reproduce GSM-encoded voice (is there anything VLC can’t do?). And [FFmpeg](https://ffmpeg.org) comes with built-in GSM encoding and decoding capabilities. This made me wonder: why do these tools support GSM codecs out-of-the-box? Is there a significant need for people to work with GSM voice codecs? Perhaps it’s related to GSM eavesdropping? But let’s not go down that rabbit hole.
 
-Back to our task, here’s how you do it. Let’s assume that we have an audio file, call it`voice.wav`. You will have to instruct `ffmpeg` to downsample it to 4 kHz, downmix the stereo into mono, code it using `gsm` and save it in a new file called `voice.gsm`
+Back to our task, here’s how you do it. Let’s assume that we have an audio file, call it `voice.wav`. You will have to instruct `ffmpeg` to downsample it to 4 kHz, downmix the stereo into mono, encode it using `gsm` and save it in a new file called `voice.gsm`:
 ```
 ffmpeg -i voice.wav -ar 8000 -ac 1 -g gsm voice.gsm
 ```
 
-Then open the file with VLC and there you go, you're listening to your voice coded with the GSM voice codec. Thanks for your attention, see you at the next post.
+Then open the file with VLC and there you go: you're listening to your voice coded with the GSM voice codec. Thanks for your attention, see you at the next post.
 
-No, wait a second. I didn't specify Full Rate/Half Rate. I recorded around 13 seconds of voice, and got a gsm file of around 176 kbytes. That gives me a bitrate of 13.5 kbps. `ffmpeg` is using Full Rate! But, as i said, I want to use half rate, i want to experience how bad it is.
+No, wait a second. I didn't specify Full Rate/Half Rate. I recorded around 13 seconds of voice, and got a gsm file of around 176 kB. That gives me a bitrate of 13.5 kbps. `ffmpeg` is using Full Rate! But, as I said, I want to use half rate, I want to experience how bad it is.
 
 I searched some more, it seems that `libgsm` (the codec library used by `ffmpeg`) only supports full rate. I couldn't use `ffmpeg` for this. But then I found [GAPK](https://osmocom.org/projects/gapk/wiki), a collection of GSM codecs packed into a command line tool, part of the awesome Osmocom project. `GAPK` supports Half Rate, but we have to install it first. Unfortunately there's no documentation, but the tool is simple enough that we can figure out how it works while using it. 
 
@@ -72,7 +72,7 @@ That gives us a `voice.pcm` file that can be processed by `GAPK`. Let's encode i
 ```
 osmo-gapk -i voice.pcm -f rawpcm-s16le -g racal-hr -o voice.hr
 ```
-`voice.hr` is 72.8 kbytes, giving us a bitrate of 5.6 kbps - exactly what we were expecting! 
+`voice.hr` is 72.8 kbytes, giving us a bitrate of 5.6 kbps—exactly what we were expecting! 
 
 Unfortunately VLC can't reproduce Half Rate files. We have to decode it back into PCM using `GAPK`:
 ```
