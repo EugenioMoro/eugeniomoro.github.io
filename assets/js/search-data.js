@@ -84,6 +84,12 @@ ninja.data = [{
           section: "News",},{id: "news-our-magazine-paper-titled-advancing-o-ran-to-facilitate-intelligence-in-v2x-has-been-accepted-for-pubblication-at-ieee-network-check-it-out-here",
           title: 'Our magazine paper titled Advancing O-RAN to Facilitate Intelligence in V2X has been...',
           description: "",
+          section: "News",},{id: "news-our-conference-paper-titled-adaptive-5g-radio-access-strategies-for-reliable-wireless-fronthaul-has-been-accepted-for-pubblication-at-medcomnet-2025",
+          title: 'Our conference paper titled Adaptive 5G Radio Access Strategies for Reliable Wireless Fronthaul...',
+          description: "",
+          section: "News",},{id: "news-our-tutorial-proposal-titled-digital-twins-resources-and-innovative-tools-for-vehicular-networks-drive-tutorial-has-been-accepted-at-ieee-vtc2025-fall-see-you-in-chengdu-next-october",
+          title: 'Our tutorial proposal titled Digital twins, Resources, and Innovative tools for Vehicular networks...',
+          description: "",
           section: "News",},{
         id: 'social-email',
         title: 'email',
